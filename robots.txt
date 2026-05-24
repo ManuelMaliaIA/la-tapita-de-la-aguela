@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://la-tapita-aguela.vercel.app/sitemap.xml
