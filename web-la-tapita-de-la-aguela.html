@@ -45,11 +45,13 @@
       padding: 14px 48px;
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.05rem; color: var(--cream); letter-spacing: .04em;
+    .nav-logo img {
+      height: 64px; width: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #fff;
+      display: block;
     }
-    .nav-logo span { color: var(--gold); font-style: italic; }
     .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
     .nav-links a {
       color: var(--muted); text-decoration: none;
@@ -310,8 +312,7 @@
       background: var(--dark); border-top: 1px solid var(--border);
       padding: 52px 48px; text-align: center;
     }
-    .f-logo { font-family: 'Montserrat', sans-serif; font-size: 1.35rem; color: var(--cream); margin-bottom: 6px; }
-    .f-logo span { color: var(--gold); font-style: italic; }
+    .f-logo img { height: 130px; width: 130px; border-radius: 50%; object-fit: cover; background: #fff; margin-bottom: 12px; }
     .f-tag { font-size: .8rem; color: var(--muted); margin-bottom: 28px; }
     .f-socials { display: flex; gap: 14px; justify-content: center; margin-bottom: 32px; }
     .f-social {
@@ -346,7 +347,9 @@
 
 <!-- ═══ NAV ═══ -->
 <nav id="nav">
-  <div class="nav-logo">La Tapita <span>de la Aguela</span></div>
+  <div class="nav-logo">
+    <img src="ChatGPT%20Image%20May%2024%2C%202026%2C%2004_48_47%20PM.png" alt="Logo La Tapita de la Aguela">
+  </div>
   <ul class="nav-links">
     <li><a href="#nosotros">El Bar</a></li>
     <li><a href="#carta">La Carta</a></li>
@@ -613,7 +616,9 @@
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="f-logo">La Tapita <span>de la Aguela</span></div>
+  <div class="f-logo">
+    <img src="ChatGPT%20Image%20May%2024%2C%202026%2C%2004_48_47%20PM.png" alt="Logo La Tapita de la Aguela">
+  </div>
   <p class="f-tag">Bar tradicional · C. Cerco y Jareta, 26 · Barbate, Cádiz</p>
   <div class="f-socials">
     <a href="https://www.instagram.com/latapitadelaaguela/" target="_blank" rel="noopener" class="f-social" aria-label="Instagram">
