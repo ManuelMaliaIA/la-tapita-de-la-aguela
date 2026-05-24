@@ -54,9 +54,10 @@
     }
     .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
     .nav-links a {
-      color: var(--muted); text-decoration: none;
+      color: var(--cream); text-decoration: none;
       font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
       transition: color .3s;
+      text-shadow: 0 1px 8px rgba(0,0,0,.7);
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
@@ -86,11 +87,13 @@
     }
     .hero-badge {
       display: inline-block;
-      border: 1px solid var(--gold); color: var(--gold);
+      border: 1px solid var(--gold); color: #fff;
+      background: rgba(0,0,0,.45);
       font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
-      padding: 6px 20px; border-radius: 50px; margin-bottom: 28px;
+      padding: 7px 22px; border-radius: 50px; margin-bottom: 28px;
       opacity: 0; transform: translateY(16px);
       animation: up .8s .3s forwards;
+      text-shadow: 0 1px 4px rgba(0,0,0,.5);
     }
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
@@ -214,61 +217,96 @@
 
     .oferta {
       background: linear-gradient(135deg, var(--green), var(--green2));
-      border-radius: var(--r); padding: 20px 36px;
-      display: flex; align-items: center; justify-content: center; gap: 20px;
-      margin-bottom: 48px; flex-wrap: wrap;
+      border-radius: var(--r); padding: 22px 40px;
+      display: flex; align-items: center; justify-content: center; gap: 24px;
+      margin-bottom: 52px; flex-wrap: wrap;
+      box-shadow: 0 8px 32px rgba(74,122,53,.3);
     }
-    .oferta-ico { font-size: 1.8rem; }
+    .oferta-ico { font-size: 2.2rem; }
     .oferta-txt strong {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.6rem; color: #fff; display: block;
+      font-size: 1.8rem; font-weight: 800; color: #fff; display: block; letter-spacing: -.01em;
     }
-    .oferta-txt span { font-size: .85rem; color: rgba(255,255,255,.8); }
+    .oferta-txt span { font-size: .88rem; color: rgba(255,255,255,.85); }
 
-    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+    /* Tabs */
+    .tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
     .tab {
-      background: transparent; border: 1px solid var(--border);
-      color: var(--muted); padding: 8px 22px; border-radius: 50px;
-      cursor: pointer; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+      background: var(--dark2); border: 1px solid var(--border);
+      color: var(--muted); padding: 10px 22px; border-radius: 50px;
+      cursor: pointer; font-size: .82rem; letter-spacing: .06em;
       font-family: 'Inter', sans-serif; transition: all .3s;
+      display: flex; align-items: center; gap: 8px;
     }
-    .tab:hover, .tab.on { background: var(--green); border-color: var(--green); color: #fff; }
+    .tab:hover { border-color: var(--green); color: var(--cream); }
+    .tab.on {
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      border-color: transparent; color: #fff;
+      box-shadow: 0 4px 16px rgba(74,122,53,.35);
+    }
+    .tab-ico { font-size: 1rem; }
 
     .carta-sec { display: none; }
     .carta-sec.on { display: block; }
 
-    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 18px; }
-    .menu-card {
-      background: var(--dark2); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 20px 24px;
-      display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
-      transition: transform .3s, border-color .3s, box-shadow .3s;
+    /* Tapas — estilo pizarra */
+    .tapa-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 12px;
     }
-    .menu-card:hover {
-      transform: translateY(-4px); border-color: var(--gold);
-      box-shadow: 0 10px 36px rgba(200,146,42,.1);
+    .tapa-card {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: var(--r); padding: 16px 20px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      transition: transform .3s, box-shadow .3s, border-color .3s;
     }
-    .mc-name {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem; color: var(--cream); margin-bottom: 6px;
+    .tapa-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(74,122,53,.15);
+      border-left-color: var(--gold);
     }
-    .mc-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
-    .mc-price {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem; color: var(--gold); font-weight: 600; white-space: nowrap;
+    .tapa-n { font-size: .92rem; color: var(--cream); font-weight: 500; }
+    .tapa-n small { display: block; font-size: .73rem; color: var(--muted); font-weight: 300; margin-top: 3px; }
+    .tapa-p {
+      background: rgba(200,146,42,.15); color: var(--gold);
+      font-weight: 700; font-size: .88rem; white-space: nowrap;
+      padding: 4px 12px; border-radius: 50px;
+      border: 1px solid rgba(200,146,42,.3);
     }
 
-    .tapa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 14px; }
-    .tapa-card {
+    /* Tarjetas de menú */
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px,1fr)); gap: 20px; }
+    .menu-card {
       background: var(--dark2); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 15px 20px;
-      display: flex; justify-content: space-between; align-items: center; gap: 12px;
-      transition: transform .3s, border-color .3s;
+      border-radius: var(--r); padding: 0; overflow: hidden;
+      transition: transform .35s, box-shadow .35s;
+      display: flex; flex-direction: column;
     }
-    .tapa-card:hover { transform: translateY(-3px); border-color: var(--green); }
-    .tapa-n { font-size: .9rem; color: var(--text); }
-    .tapa-n small { display: block; font-size: .73rem; color: var(--muted); margin-top: 2px; }
-    .tapa-p { color: var(--gold); font-weight: 700; font-size: .92rem; white-space: nowrap; }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.35);
+    }
+    .menu-card-top {
+      height: 4px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+    }
+    .menu-card-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .menu-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .mc-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.02rem; font-weight: 600; color: var(--cream); line-height: 1.3;
+    }
+    .mc-price {
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #fff; font-weight: 700; font-size: .88rem;
+      padding: 5px 14px; border-radius: 50px; white-space: nowrap; flex-shrink: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .mc-price.gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+    }
+    .mc-desc { font-size: .8rem; color: var(--muted); line-height: 1.6; }
 
     /* ═══ HORARIO ═══ */
     #horario {
@@ -437,13 +475,13 @@
     </div>
 
     <div class="tabs r">
-      <button class="tab on" data-tab="tapas">Tapas</button>
-      <button class="tab" data-tab="ensaladas">Ensaladas</button>
-      <button class="tab" data-tab="tablas">Tablas</button>
-      <button class="tab" data-tab="fritos">Fritos</button>
-      <button class="tab" data-tab="tostas">Tostas</button>
-      <button class="tab" data-tab="platos">Platos</button>
-      <button class="tab" data-tab="postres">Postres</button>
+      <button class="tab on" data-tab="tapas"><span class="tab-ico">🫒</span>Tapas</button>
+      <button class="tab" data-tab="ensaladas"><span class="tab-ico">🥗</span>Ensaladas</button>
+      <button class="tab" data-tab="tablas"><span class="tab-ico">🧀</span>Tablas</button>
+      <button class="tab" data-tab="fritos"><span class="tab-ico">🦑</span>Fritos</button>
+      <button class="tab" data-tab="tostas"><span class="tab-ico">🍞</span>Tostas</button>
+      <button class="tab" data-tab="platos"><span class="tab-ico">🍽️</span>Platos</button>
+      <button class="tab" data-tab="postres"><span class="tab-ico">🍮</span>Postres</button>
     </div>
 
     <!-- TAPAS -->
@@ -464,12 +502,24 @@
     <div class="carta-sec" id="tab-ensaladas">
       <div class="menu-grid">
         <div class="menu-card r" style="transition-delay:.06s">
-          <div><div class="mc-name">Ensalada de Cabra</div><div class="mc-desc">Lechuga mezclun, cebolla caramelizada, tomates cherrys, mango, queso de cabra, confitura de frutos rojos y nueces.</div></div>
-          <div class="mc-price">11€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Ensalada de Cabra</div>
+              <div class="mc-price gold">11€</div>
+            </div>
+            <div class="mc-desc">Lechuga mezclun, cebolla caramelizada, tomates cherrys, mango, queso de cabra, confitura de frutos rojos y nueces.</div>
+          </div>
         </div>
         <div class="menu-card r" style="transition-delay:.12s">
-          <div><div class="mc-name">Tomate Aliñado</div><div class="mc-desc">Tomate de la huerta con melva o atún y aliño de vinagreta de ajo.</div></div>
-          <div class="mc-price">9€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tomate Aliñado</div>
+              <div class="mc-price gold">9€</div>
+            </div>
+            <div class="mc-desc">Tomate de la huerta con melva o atún y aliño de vinagreta de ajo.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -478,12 +528,24 @@
     <div class="carta-sec" id="tab-tablas">
       <div class="menu-grid">
         <div class="menu-card r" style="transition-delay:.06s">
-          <div><div class="mc-name">Tabla de Quesos</div><div class="mc-desc">Selección de 3 quesos.</div></div>
-          <div class="mc-price">8€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tabla de Quesos</div>
+              <div class="mc-price gold">8€</div>
+            </div>
+            <div class="mc-desc">Selección de 3 quesos.</div>
+          </div>
         </div>
         <div class="menu-card r" style="transition-delay:.12s">
-          <div><div class="mc-name">Tabla de Ibéricos</div><div class="mc-desc">Chorizo, salchichón, morcilla y jamón.</div></div>
-          <div class="mc-price">7,50€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tabla de Ibéricos</div>
+              <div class="mc-price gold">7,50€</div>
+            </div>
+            <div class="mc-desc">Chorizo, salchichón, morcilla y jamón.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -491,13 +553,31 @@
     <!-- FRITOS -->
     <div class="carta-sec" id="tab-fritos">
       <div class="menu-grid">
-        <div class="menu-card r" style="transition-delay:.04s"><div><div class="mc-name">Calamares</div></div><div class="mc-price">12€</div></div>
-        <div class="menu-card r" style="transition-delay:.08s"><div><div class="mc-name">Chocos</div></div><div class="mc-price">12€</div></div>
-        <div class="menu-card r" style="transition-delay:.12s"><div><div class="mc-name">Puntillitas</div></div><div class="mc-price">8€</div></div>
-        <div class="menu-card r" style="transition-delay:.16s"><div><div class="mc-name">Cazón</div></div><div class="mc-price">9€</div></div>
+        <div class="menu-card r" style="transition-delay:.04s">
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body"><div class="menu-card-header"><div class="mc-name">Calamares</div><div class="mc-price gold">12€</div></div></div>
+        </div>
+        <div class="menu-card r" style="transition-delay:.08s">
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body"><div class="menu-card-header"><div class="mc-name">Chocos</div><div class="mc-price gold">12€</div></div></div>
+        </div>
+        <div class="menu-card r" style="transition-delay:.12s">
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body"><div class="menu-card-header"><div class="mc-name">Puntillitas</div><div class="mc-price gold">8€</div></div></div>
+        </div>
+        <div class="menu-card r" style="transition-delay:.16s">
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body"><div class="menu-card-header"><div class="mc-name">Cazón</div><div class="mc-price gold">9€</div></div></div>
+        </div>
         <div class="menu-card r" style="transition-delay:.20s">
-          <div><div class="mc-name">Croquetas de la Casa (6 uds)</div><div class="mc-desc">Preguntar por las croquetas del día.</div></div>
-          <div class="mc-price">5€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Croquetas de la Casa (6 uds)</div>
+              <div class="mc-price gold">5€</div>
+            </div>
+            <div class="mc-desc">Preguntar por las croquetas del día.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -506,16 +586,34 @@
     <div class="carta-sec" id="tab-tostas">
       <div class="menu-grid">
         <div class="menu-card r" style="transition-delay:.06s">
-          <div><div class="mc-name">Tosta de Cabra</div><div class="mc-desc">Queso de cabra, cebolla caramelizada, mermelada de frutos rojos y vinagre balsámico de frambuesa.</div></div>
-          <div class="mc-price">4,50€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tosta de Cabra</div>
+              <div class="mc-price gold">4,50€</div>
+            </div>
+            <div class="mc-desc">Queso de cabra, cebolla caramelizada, mermelada de frutos rojos y vinagre balsámico de frambuesa.</div>
+          </div>
         </div>
         <div class="menu-card r" style="transition-delay:.12s">
-          <div><div class="mc-name">Tosta de Atún Rojo</div><div class="mc-desc">Atún rojo con mango en su aliño.</div></div>
-          <div class="mc-price">8,50€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tosta de Atún Rojo</div>
+              <div class="mc-price gold">8,50€</div>
+            </div>
+            <div class="mc-desc">Atún rojo con mango en su aliño.</div>
+          </div>
         </div>
         <div class="menu-card r" style="transition-delay:.18s">
-          <div><div class="mc-name">Tosta de Presa Ibérica</div><div class="mc-desc">Presa ibérica a la parrilla con queso curado.</div></div>
-          <div class="mc-price">4,50€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tosta de Presa Ibérica</div>
+              <div class="mc-price gold">4,50€</div>
+            </div>
+            <div class="mc-desc">Presa ibérica a la parrilla con queso curado.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -524,12 +622,24 @@
     <div class="carta-sec" id="tab-platos">
       <div class="menu-grid">
         <div class="menu-card r" style="transition-delay:.06s">
-          <div><div class="mc-name">Presa</div><div class="mc-desc">Acompañado de patatas fritas.</div></div>
-          <div class="mc-price">16€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Presa</div>
+              <div class="mc-price gold">16€</div>
+            </div>
+            <div class="mc-desc">Acompañado de patatas fritas.</div>
+          </div>
         </div>
         <div class="menu-card r" style="transition-delay:.12s">
-          <div><div class="mc-name">Tarantelo</div><div class="mc-desc">Acompañado de guarnición de patatas en aliño.</div></div>
-          <div class="mc-price">18€</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Tarantelo</div>
+              <div class="mc-price gold">18€</div>
+            </div>
+            <div class="mc-desc">Acompañado de guarnición de patatas en aliño.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -538,8 +648,14 @@
     <div class="carta-sec" id="tab-postres">
       <div class="menu-grid">
         <div class="menu-card r" style="transition-delay:.06s">
-          <div><div class="mc-name">Postres Caseros</div><div class="mc-desc">Elaborados en casa según la temporada. Pregunta al momento por la selección del día.</div></div>
-          <div class="mc-price">Según temporada</div>
+          <div class="menu-card-top"></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="mc-name">Postres Caseros</div>
+              <div class="mc-price">Según temporada</div>
+            </div>
+            <div class="mc-desc">Elaborados en casa según la temporada. Pregunta al momento por la selección del día.</div>
+          </div>
         </div>
       </div>
     </div>
